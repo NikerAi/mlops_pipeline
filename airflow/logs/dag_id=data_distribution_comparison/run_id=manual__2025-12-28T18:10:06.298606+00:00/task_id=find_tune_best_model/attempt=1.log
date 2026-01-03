@@ -1,0 +1,565 @@
+[2025-12-28T18:10:49.465+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-28T18:10:50.415+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_distribution_comparison.find_tune_best_model manual__2025-12-28T18:10:06.298606+00:00 [queued]>
+[2025-12-28T18:10:50.477+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_distribution_comparison.find_tune_best_model manual__2025-12-28T18:10:06.298606+00:00 [queued]>
+[2025-12-28T18:10:50.478+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-28T18:10:50.957+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): find_tune_best_model> on 2025-12-28 18:10:06.298606+00:00
+[2025-12-28T18:10:51.143+0000] {standard_task_runner.py:64} INFO - Started process 5086 to run task
+[2025-12-28T18:10:51.154+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_distribution_comparison', 'find_tune_best_model', 'manual__2025-12-28T18:10:06.298606+00:00', '--job-id', '44', '--raw', '--subdir', 'DAGS_FOLDER/dag_test/dag_test.py', '--cfg-path', '/tmp/tmp2bxl687p']
+[2025-12-28T18:10:51.191+0000] {standard_task_runner.py:91} INFO - Job 44: Subtask find_tune_best_model
+[2025-12-28T18:10:52.152+0000] {task_command.py:426} INFO - Running <TaskInstance: data_distribution_comparison.find_tune_best_model manual__2025-12-28T18:10:06.298606+00:00 [running]> on host 72b76ef3d5d8
+[2025-12-28T18:10:55.795+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_distribution_comparison' AIRFLOW_CTX_TASK_ID='find_tune_best_model' AIRFLOW_CTX_EXECUTION_DATE='2025-12-28T18:10:06.298606+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-28T18:10:06.298606+00:00'
+[2025-12-28T18:10:55.797+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-28T18:11:49.748+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/pydantic/_internal/_fields.py:161 UserWarning: Field "model_server_url" has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+[2025-12-28T18:11:49.800+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/pydantic/_internal/_config.py:341 UserWarning: Valid config keys have changed in V2:
+* 'schema_extra' has been renamed to 'json_schema_extra'
+[2025-12-28T18:12:33.632+0000] {logging_mixin.py:188} INFO - set env
+[2025-12-28T18:12:33.637+0000] {logging_mixin.py:188} INFO - set uri
+[2025-12-28T18:12:43.496+0000] {logging_mixin.py:188} INFO - set exp
+[2025-12-28T18:13:05.636+0000] {logging_mixin.py:188} INFO -                     Description             Value
+0                    Session id                42
+1                        Target             price
+2                   Target type        Regression
+3           Original data shape         (500, 10)
+4        Transformed data shape         (500, 28)
+5   Transformed train set shape         (350, 28)
+6    Transformed test set shape         (150, 28)
+7              Numeric features                 6
+8          Categorical features                 3
+9                    Preprocess              True
+10              Imputation type            simple
+11           Numeric imputation              mean
+12       Categorical imputation              mode
+13     Maximum one-hot encoding                25
+14              Encoding method              None
+15                    Normalize              True
+16             Normalize method            zscore
+17               Fold Generator             KFold
+18                  Fold Number                 5
+19                     CPU Jobs                -1
+20                      Use GPU             False
+21               Log Experiment      MlflowLogger
+22              Experiment Name  price_prediction
+23                          USI              7779
+[2025-12-28T18:13:13.312+0000] {logging_mixin.py:188} WARNING - 2025/12/28 18:13:13 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2025-12-28T18:13:19.541+0000] {logging_mixin.py:188} WARNING - Processing:   0%|          | 0/77 [00:00<?, ?it/s]
+[2025-12-28T18:13:29.049+0000] {logging_mixin.py:188} WARNING - Processing:   6%|6         | 5/77 [00:09<02:16,  1.90s/it]
+[2025-12-28T18:13:30.349+0000] {logging_mixin.py:188} WARNING - Processing:   9%|9         | 7/77 [00:10<01:41,  1.45s/it]
+[2025-12-28T18:13:36.196+0000] {logging_mixin.py:188} WARNING - Processing:  12%|#1        | 9/77 [00:16<02:12,  1.95s/it]
+[2025-12-28T18:13:36.854+0000] {logging_mixin.py:188} WARNING - Processing:  14%|#4        | 11/77 [00:17<01:33,  1.42s/it]
+[2025-12-28T18:13:41.510+0000] {logging_mixin.py:188} WARNING - Processing:  17%|#6        | 13/77 [00:21<01:49,  1.71s/it]
+[2025-12-28T18:13:42.546+0000] {logging_mixin.py:188} WARNING - Processing:  19%|#9        | 15/77 [00:23<01:22,  1.34s/it]
+[2025-12-28T18:13:46.787+0000] {logging_mixin.py:188} WARNING - Processing:  22%|##2       | 17/77 [00:27<01:34,  1.58s/it]
+[2025-12-28T18:13:47.553+0000] {logging_mixin.py:188} WARNING - Processing:  25%|##4       | 19/77 [00:28<01:10,  1.21s/it]
+[2025-12-28T18:13:51.955+0000] {logging_mixin.py:188} WARNING - Processing:  27%|##7       | 21/77 [00:32<01:24,  1.51s/it]
+[2025-12-28T18:13:52.201+0000] {logging_mixin.py:188} WARNING - Processing:  30%|##9       | 23/77 [00:32<00:58,  1.09s/it]
+[2025-12-28T18:13:56.599+0000] {logging_mixin.py:188} WARNING - Processing:  32%|###2      | 25/77 [00:37<01:14,  1.43s/it]
+[2025-12-28T18:13:57.067+0000] {logging_mixin.py:188} WARNING - Processing:  35%|###5      | 27/77 [00:37<00:53,  1.07s/it]
+[2025-12-28T18:14:01.706+0000] {logging_mixin.py:188} WARNING - Processing:  38%|###7      | 29/77 [00:42<01:09,  1.44s/it]
+[2025-12-28T18:14:02.041+0000] {logging_mixin.py:188} WARNING - Processing:  40%|####      | 31/77 [00:42<00:48,  1.06s/it]
+[2025-12-28T18:14:06.421+0000] {logging_mixin.py:188} WARNING - Processing:  43%|####2     | 33/77 [00:46<01:01,  1.40s/it]
+[2025-12-28T18:14:06.543+0000] {logging_mixin.py:188} WARNING - Processing:  44%|####4     | 34/77 [00:46<00:50,  1.17s/it]
+[2025-12-28T18:14:07.118+0000] {logging_mixin.py:188} WARNING - Processing:  45%|####5     | 35/77 [00:47<00:44,  1.05s/it]
+[2025-12-28T18:14:14.761+0000] {logging_mixin.py:188} WARNING - Processing:  48%|####8     | 37/77 [00:55<01:22,  2.06s/it]
+[2025-12-28T18:14:16.350+0000] {logging_mixin.py:188} WARNING - Processing:  51%|#####     | 39/77 [00:56<01:01,  1.63s/it]
+[2025-12-28T18:14:23.278+0000] {logging_mixin.py:188} WARNING - Processing:  53%|#####3    | 41/77 [01:03<01:20,  2.23s/it]
+[2025-12-28T18:14:23.512+0000] {logging_mixin.py:188} WARNING - Processing:  56%|#####5    | 43/77 [01:03<00:52,  1.56s/it]
+[2025-12-28T18:14:29.293+0000] {logging_mixin.py:188} WARNING - Processing:  58%|#####8    | 45/77 [01:09<01:03,  1.97s/it]
+[2025-12-28T18:14:29.600+0000] {logging_mixin.py:188} WARNING - Processing:  61%|######1   | 47/77 [01:10<00:42,  1.41s/it]
+[2025-12-28T18:14:32.317+0000] {logging_mixin.py:188} WARNING - Processing:  64%|######3   | 49/77 [01:12<00:39,  1.40s/it]
+[2025-12-28T18:14:32.779+0000] {logging_mixin.py:188} WARNING - Processing:  66%|######6   | 51/77 [01:13<00:27,  1.04s/it]
+[2025-12-28T18:14:39.529+0000] {logging_mixin.py:188} WARNING - Processing:  69%|######8   | 53/77 [01:19<00:41,  1.75s/it]
+[2025-12-28T18:14:39.826+0000] {logging_mixin.py:188} WARNING - Processing:  71%|#######1  | 55/77 [01:20<00:27,  1.26s/it]
+[2025-12-28T18:14:49.073+0000] {logging_mixin.py:188} WARNING - Processing:  74%|#######4  | 57/77 [01:29<00:45,  2.28s/it]
+[2025-12-28T18:14:49.463+0000] {logging_mixin.py:188} WARNING - Processing:  77%|#######6  | 59/77 [01:29<00:29,  1.65s/it]
+[2025-12-28T18:14:52.540+0000] {logging_mixin.py:188} WARNING - Processing:  79%|#######9  | 61/77 [01:32<00:25,  1.62s/it]
+[2025-12-28T18:14:53.032+0000] {logging_mixin.py:188} WARNING - Processing:  82%|########1 | 63/77 [01:33<00:16,  1.20s/it]
+[2025-12-28T18:15:00.702+0000] {logging_mixin.py:188} WARNING - Processing:  84%|########4 | 65/77 [01:41<00:23,  1.99s/it]
+[2025-12-28T18:15:01.006+0000] {logging_mixin.py:188} WARNING - Processing:  87%|########7 | 67/77 [01:41<00:14,  1.44s/it]
+[2025-12-28T18:25:22.764+0000] {logging_mixin.py:188} WARNING - Processing:  90%|########9 | 69/77 [12:03<12:34, 94.33s/it]
+[2025-12-28T18:25:23.517+0000] {logging_mixin.py:188} WARNING - Processing:  92%|#########2| 71/77 [12:03<06:36, 66.13s/it]
+[2025-12-28T18:25:29.384+0000] {logging_mixin.py:188} WARNING - Processing:  95%|#########4| 73/77 [12:09<03:08, 47.17s/it]
+[2025-12-28T18:25:30.370+0000] {logging_mixin.py:188} WARNING - Processing:  97%|#########7| 75/77 [12:10<01:06, 33.16s/it]
+[2025-12-28T18:25:32.985+0000] {logging_mixin.py:188} WARNING - Processing: 100%|##########| 77/77 [12:13<00:00, 23.60s/it]
+[2025-12-28T18:25:32.987+0000] {logging_mixin.py:188} WARNING -                                                            
+[2025-12-28T18:25:36.663+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.721+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.726+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.728+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.729+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.731+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.733+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.734+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.741+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.757+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.759+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.764+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.766+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.859+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.861+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.864+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.866+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.867+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.868+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.870+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:36.929+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:37.164+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:37.178+0000] {font_manager.py:1400} WARNING - findfont: Font family ['sans-serif'] not found. Falling back to DejaVu Sans.
+[2025-12-28T18:25:37.179+0000] {font_manager.py:1405} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:37.492+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:37.533+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:37.535+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:37.546+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:37.548+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:37.553+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:37.554+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:37.558+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:37.566+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:37.596+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:37.615+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:37.964+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:37.967+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.027+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.030+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.193+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.195+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.264+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.265+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.266+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.267+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.268+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.274+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.278+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.280+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.284+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.302+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.305+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.315+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.317+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.334+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.335+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.337+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.340+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.342+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.343+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.345+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.350+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.357+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.362+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.366+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.371+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.377+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.384+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.392+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.424+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.427+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.450+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.458+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.465+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.469+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.479+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.484+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.488+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.495+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.524+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.581+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.586+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.601+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.629+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.635+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.646+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.649+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.654+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.656+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.659+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.664+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.681+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.684+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.687+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.695+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.702+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.722+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.740+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.752+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.758+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.767+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.771+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.782+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:38.788+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.093+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.094+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.098+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.101+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.111+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.113+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.116+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.124+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.128+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.138+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.140+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.142+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.144+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.165+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.166+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.181+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.191+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.195+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.197+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.200+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.210+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.221+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.228+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.236+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.242+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.248+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.259+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.269+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.309+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.313+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.342+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.355+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.370+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.374+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.377+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.381+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.398+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.405+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.437+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.474+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.489+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.505+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.538+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.539+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.562+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.563+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.565+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.566+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.567+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.570+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.576+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.579+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.581+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.601+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.615+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.667+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.686+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.705+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.708+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.711+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.718+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.723+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:39.726+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:41.865+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:41.867+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:41.871+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:41.876+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:41.881+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:41.884+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:41.888+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:41.899+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:41.901+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:41.904+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:41.950+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:41.954+0000] {font_manager.py:1400} WARNING - findfont: Font family ['sans-serif'] not found. Falling back to DejaVu Sans.
+[2025-12-28T18:25:41.957+0000] {font_manager.py:1405} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:41.978+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:41.980+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.302+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.323+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.324+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.330+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.333+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.343+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.344+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.345+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.357+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.358+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.360+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.361+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.362+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.364+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.366+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.379+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.382+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.470+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.476+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.478+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.497+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.501+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.503+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.633+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.636+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.639+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.660+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.661+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.662+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.663+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.668+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.672+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.675+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.677+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.679+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.681+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.709+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.720+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.723+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.742+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.748+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.752+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.763+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.768+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.774+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.778+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.785+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.795+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.904+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.915+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.938+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:42.996+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.021+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.060+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.076+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.094+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.123+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.288+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.290+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.306+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.312+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.313+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.314+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.323+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.324+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.326+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.333+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.335+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.337+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.339+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.341+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.344+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.345+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.362+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.364+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.367+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.370+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.439+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.453+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.467+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.475+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.490+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.493+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.498+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.504+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.513+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.519+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.549+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.564+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.567+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.597+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.601+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.604+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.607+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.610+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.651+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.665+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.680+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.708+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.843+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.860+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.863+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.869+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.884+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.891+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.903+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.920+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:43.936+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.025+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.029+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.045+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.046+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.049+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.051+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.070+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.074+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.080+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.094+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.097+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.098+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.104+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.110+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.114+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.117+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.136+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.146+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.148+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.152+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.984+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.986+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.991+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.993+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.996+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:44.998+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.001+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.003+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.006+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.007+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.010+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.022+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.028+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.031+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.033+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.289+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.293+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.297+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.301+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.304+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.306+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.311+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.422+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.916+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.918+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.922+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.924+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.930+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.935+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.937+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.943+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.950+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.953+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.955+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.984+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.984+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.987+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:45.995+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.012+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.018+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.021+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.023+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.025+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.027+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.028+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.032+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.048+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.055+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.058+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.063+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.070+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.079+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.126+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.133+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.181+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.199+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.206+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.223+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.248+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.266+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.279+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.292+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.303+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.312+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.367+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.398+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.458+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.459+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.460+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.461+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.463+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.464+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.465+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.467+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.468+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.469+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.471+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.488+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.489+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.492+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.493+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.503+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.504+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.509+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.511+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.512+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.517+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.530+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.535+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.541+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.546+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.552+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.556+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.565+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.572+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.596+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.599+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.608+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.611+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.614+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.617+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.622+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.624+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.625+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.627+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.636+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.638+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.661+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:25:46.668+0000] {font_manager.py:1333} WARNING - findfont: Generic family 'sans-serif' not found because none of the following families were found: Arial, Liberation Sans, Bitstream Vera Sans, sans-serif
+[2025-12-28T18:26:29.849+0000] {logging_mixin.py:188} INFO -                                     Model            MAE           MSE  \
+gbr           Gradient Boosting Regressor   6.101107e+02  1.594936e+06   
+et                  Extra Trees Regressor   6.269610e+02  1.479807e+06   
+lightgbm  Light Gradient Boosting Machine   6.777005e+02  1.684752e+06   
+rf                Random Forest Regressor   6.911240e+02  1.698860e+06   
+ada                    AdaBoost Regressor   9.143841e+02  2.093209e+06   
+dt                Decision Tree Regressor   9.449429e+02  3.482915e+06   
+en                            Elastic Net   1.316343e+03  2.718944e+07   
+knn                 K Neighbors Regressor   1.563693e+03  5.847838e+06   
+par          Passive Aggressive Regressor   2.038523e+03  4.198878e+08   
+omp           Orthogonal Matching Pursuit   2.069132e+03  2.939912e+08   
+ridge                    Ridge Regression   2.391512e+03  5.956528e+08   
+br                         Bayesian Ridge   2.397367e+03  6.119062e+08   
+huber                     Huber Regressor   2.473045e+03  8.088829e+08   
+lasso                    Lasso Regression   2.534606e+03  7.281129e+08   
+llar         Lasso Least Angle Regression   2.538052e+03  7.265105e+08   
+lr                      Linear Regression   2.554103e+03  7.376812e+08   
+dummy                     Dummy Regressor   2.656845e+03  1.290600e+07   
+lar                Least Angle Regression  4.139318e+264           inf   
+
+                RMSE       R2     RMSLE           MAPE  TT (Sec)  
+gbr        1235.2602   0.8655    0.2089   1.675000e-01     1.524  
+et         1202.2760   0.8756    0.2045   1.668000e-01     1.848  
+lightgbm   1276.4167   0.8620    0.2695   2.045000e-01   124.350  
+rf         1286.2118   0.8541    0.2237   1.837000e-01     1.342  
+ada        1436.2657   0.8203    0.4034   4.090000e-01     0.610  
+dt         1842.1759   0.7027    0.2988   2.410000e-01     0.542  
+en         3545.1672  -1.0596    0.5613   5.179000e-01     0.842  
+knn        2384.4668   0.5504    0.6196   6.821000e-01     1.144  
+par       10502.1811 -30.6896    0.6502   7.092000e-01     1.524  
+omp        8994.2208 -21.2044    0.8793   8.512000e-01     0.922  
+ridge     12121.2354 -43.9595    0.8578   1.010300e+00     0.924  
+br        12264.7679 -45.1853    0.8064   9.940000e-01     0.858  
+huber     14002.2341 -60.0426    0.5794   8.668000e-01     1.380  
+lasso     13279.1298 -53.9546    0.8162   1.044000e+00     1.162  
+llar      13267.5381 -53.8338    0.8083   1.045800e+00     0.878  
+lr        13361.9290 -54.6762    0.7114   1.048100e+00     1.800  
+dummy      3568.5117  -0.0146    1.0686   1.686200e+00     1.172  
+lar              inf     -inf  121.1735  3.062166e+261     0.874  
+[2025-12-28T18:26:29.889+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-12-28T18:26:29.890+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-28T18:26:29.912+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_distribution_comparison, task_id=find_tune_best_model, run_id=manual__2025-12-28T18:10:06.298606+00:00, execution_date=20251228T181006, start_date=20251228T181050, end_date=20251228T182629
+[2025-12-28T18:26:29.942+0000] {logging_mixin.py:188} WARNING - 
+[2025-12-28T18:26:30.046+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-28T18:26:30.085+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-28T18:26:30.094+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

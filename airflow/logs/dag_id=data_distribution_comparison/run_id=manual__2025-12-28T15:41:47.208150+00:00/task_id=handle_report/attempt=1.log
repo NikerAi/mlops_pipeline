@@ -1,0 +1,41 @@
+[2025-12-28T15:42:43.455+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-28T15:42:43.684+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_distribution_comparison.handle_report manual__2025-12-28T15:41:47.208150+00:00 [queued]>
+[2025-12-28T15:42:43.737+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_distribution_comparison.handle_report manual__2025-12-28T15:41:47.208150+00:00 [queued]>
+[2025-12-28T15:42:43.739+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-28T15:42:43.825+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): handle_report> on 2025-12-28 15:41:47.208150+00:00
+[2025-12-28T15:42:43.921+0000] {standard_task_runner.py:64} INFO - Started process 359 to run task
+[2025-12-28T15:42:43.944+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_distribution_comparison', 'handle_report', 'manual__2025-12-28T15:41:47.208150+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/dag_test/dag_test.py', '--cfg-path', '/tmp/tmp3tyykqot']
+[2025-12-28T15:42:43.959+0000] {standard_task_runner.py:91} INFO - Job 12: Subtask handle_report
+[2025-12-28T15:42:44.361+0000] {task_command.py:426} INFO - Running <TaskInstance: data_distribution_comparison.handle_report manual__2025-12-28T15:41:47.208150+00:00 [running]> on host 72b76ef3d5d8
+[2025-12-28T15:42:44.894+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_distribution_comparison' AIRFLOW_CTX_TASK_ID='handle_report' AIRFLOW_CTX_EXECUTION_DATE='2025-12-28T15:41:47.208150+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-28T15:41:47.208150+00:00'
+[2025-12-28T15:42:44.928+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-28T15:42:50.417+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/pydantic/_internal/_fields.py:161 UserWarning: Field "model_server_url" has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+[2025-12-28T15:42:50.509+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/pydantic/_internal/_config.py:341 UserWarning: Valid config keys have changed in V2:
+* 'schema_extra' has been renamed to 'json_schema_extra'
+[2025-12-28T15:42:50.615+0000] {logging_mixin.py:188} WARNING - 2025/12/28 15:42:50 INFO mlflow.tracking.fluent: Experiment with name 'test' does not exist. Creating a new experiment.
+[2025-12-28T15:42:50.625+0000] {logging_mixin.py:188} INFO - Connected to MLFlow
+[2025-12-28T15:42:52.523+0000] {logging_mixin.py:188} WARNING - 2025/12/28 15:42:52 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2025-12-28T15:42:52.648+0000] {logging_mixin.py:188} INFO - No data drift detected
+[2025-12-28T15:42:52.651+0000] {python.py:237} INFO - Done. Returned value was: {}
+[2025-12-28T15:42:52.652+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-28T15:42:52.871+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_distribution_comparison, task_id=handle_report, run_id=manual__2025-12-28T15:41:47.208150+00:00, execution_date=20251228T154147, start_date=20251228T154243, end_date=20251228T154252
+[2025-12-28T15:42:53.141+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-28T15:42:53.265+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-28T15:42:53.277+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

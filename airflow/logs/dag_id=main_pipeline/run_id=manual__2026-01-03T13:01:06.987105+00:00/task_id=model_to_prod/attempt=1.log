@@ -1,0 +1,50 @@
+[2026-01-03T13:03:59.606+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-03T13:03:59.692+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: main_pipeline.model_to_prod manual__2026-01-03T13:01:06.987105+00:00 [queued]>
+[2026-01-03T13:03:59.716+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: main_pipeline.model_to_prod manual__2026-01-03T13:01:06.987105+00:00 [queued]>
+[2026-01-03T13:03:59.716+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-03T13:03:59.762+0000] {taskinstance.py:2330} INFO - Executing <Task(_BranchPythonDecoratedOperator): model_to_prod> on 2026-01-03 13:01:06.987105+00:00
+[2026-01-03T13:03:59.799+0000] {standard_task_runner.py:64} INFO - Started process 778 to run task
+[2026-01-03T13:03:59.804+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'main_pipeline', 'model_to_prod', 'manual__2026-01-03T13:01:06.987105+00:00', '--job-id', '227', '--raw', '--subdir', 'DAGS_FOLDER/pipeline/main.py', '--cfg-path', '/tmp/tmp62fua3n5']
+[2026-01-03T13:03:59.814+0000] {standard_task_runner.py:91} INFO - Job 227: Subtask model_to_prod
+[2026-01-03T13:04:00.054+0000] {task_command.py:426} INFO - Running <TaskInstance: main_pipeline.model_to_prod manual__2026-01-03T13:01:06.987105+00:00 [running]> on host 8574a19215f6
+[2026-01-03T13:04:00.526+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='main_pipeline' AIRFLOW_CTX_TASK_ID='model_to_prod' AIRFLOW_CTX_EXECUTION_DATE='2026-01-03T13:01:06.987105+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-03T13:01:06.987105+00:00'
+[2026-01-03T13:04:00.531+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-03T13:04:00.533+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-03T13:04:00.534+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 269, in execute
+    return self.do_branch(context, super().execute(context))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/pipeline/main.py", line 329, in model_to_prod
+    return new_prod_model.task_id
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlainXComArg' object has no attribute 'task_id'
+[2026-01-03T13:04:00.644+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=main_pipeline, task_id=model_to_prod, run_id=manual__2026-01-03T13:01:06.987105+00:00, execution_date=20260103T130106, start_date=20260103T130359, end_date=20260103T130400
+[2026-01-03T13:04:00.781+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 227 for task model_to_prod ('PlainXComArg' object has no attribute 'task_id'; 778)
+[2026-01-03T13:04:00.872+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-01-03T13:04:00.980+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-01-03T13:04:01.008+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

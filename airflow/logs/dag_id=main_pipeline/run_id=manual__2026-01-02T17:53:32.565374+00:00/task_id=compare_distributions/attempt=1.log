@@ -1,0 +1,32 @@
+[2026-01-02T17:54:15.410+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-02T17:54:15.699+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: main_pipeline.compare_distributions manual__2026-01-02T17:53:32.565374+00:00 [queued]>
+[2026-01-02T17:54:15.855+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: main_pipeline.compare_distributions manual__2026-01-02T17:53:32.565374+00:00 [queued]>
+[2026-01-02T17:54:15.858+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-02T17:54:15.998+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): compare_distributions> on 2026-01-02 17:53:32.565374+00:00
+[2026-01-02T17:54:16.096+0000] {standard_task_runner.py:64} INFO - Started process 602 to run task
+[2026-01-02T17:54:16.116+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'main_pipeline', 'compare_distributions', 'manual__2026-01-02T17:53:32.565374+00:00', '--job-id', '133', '--raw', '--subdir', 'DAGS_FOLDER/pipeline/main.py', '--cfg-path', '/tmp/tmptl4q9a0c']
+[2026-01-02T17:54:16.137+0000] {standard_task_runner.py:91} INFO - Job 133: Subtask compare_distributions
+[2026-01-02T17:54:16.635+0000] {task_command.py:426} INFO - Running <TaskInstance: main_pipeline.compare_distributions manual__2026-01-02T17:53:32.565374+00:00 [running]> on host 634f416f74b0
+[2026-01-02T17:54:17.542+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='main_pipeline' AIRFLOW_CTX_TASK_ID='compare_distributions' AIRFLOW_CTX_EXECUTION_DATE='2026-01-02T17:53:32.565374+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-02T17:53:32.565374+00:00'
+[2026-01-02T17:54:17.545+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-02T17:54:17.801+0000] {logging_mixin.py:188} INFO - <Response [200]>
+[2026-01-02T17:54:18.880+0000] {logging_mixin.py:188} INFO - {'carat': [0.8351302507600421, 0], 'depth': [0.8688876610864549, 0], 'table': [0.47627813630110893, 0], 'x': [0.7965517653260031, 0], 'y': [0.8219458860429147, 0], 'z': [0.4315822015069378, 0], 'price': [0.00021132884437690357, 1], 'cut': [0.0022904900191078434, 0], 'color': [0.16378211185199004, 1], 'clarity': [0.0009676000578476958, 0]}
+[2026-01-02T17:54:18.882+0000] {python.py:237} INFO - Done. Returned value was: {'data':       carat        cut color clarity  ...        price     x     y     z
+0      1.23    Premium     E     VS2  ...  8959.000000  6.90  6.94  4.21
+1      0.90       Good     G     SI1  ...  3484.000000  6.04  6.10  3.83
+2      0.73      Ideal     D     SI2  ...  2434.000000  5.81  5.87  3.56
+3      0.70    Premium     H     VS1  ...  2621.313744  5.66  5.69  3.55
+4      0.72  Very Good     G    VVS2  ...  3374.000000  5.87  5.83  3.47
+...     ...        ...   ...     ...  ...          ...   ...   ...   ...
+4995   1.60    Premium     I     SI1  ...  9017.000000  7.54  7.49  4.66
+4996   0.28      Ideal     D    VVS2  ...   787.000000  4.22  4.23  2.63
+4997   0.85       Fair     F      I1  ...  1374.876609  5.86  5.78  3.88
+4998   0.55      Ideal     F     VS2  ...  1925.000000  5.25  5.30  3.25
+4999   0.54      Ideal     E    VVS2  ...  1985.000000  5.22  5.30  3.23
+
+[5000 rows x 10 columns], 'drift_info': {'carat': [0.8351302507600421, 0], 'depth': [0.8688876610864549, 0], 'table': [0.47627813630110893, 0], 'x': [0.7965517653260031, 0], 'y': [0.8219458860429147, 0], 'z': [0.4315822015069378, 0], 'price': [0.00021132884437690357, 1], 'cut': [0.0022904900191078434, 0], 'color': [0.16378211185199004, 1], 'clarity': [0.0009676000578476958, 0]}}
+[2026-01-02T17:54:19.069+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-02T17:54:20.724+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=main_pipeline, task_id=compare_distributions, run_id=manual__2026-01-02T17:53:32.565374+00:00, execution_date=20260102T175332, start_date=20260102T175415, end_date=20260102T175420
+[2026-01-02T17:54:21.007+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-01-02T17:54:21.147+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-02T17:54:21.180+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,26 @@
+[2026-01-03T16:55:59.876+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-03T16:55:59.963+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: main_pipeline.set_staging_model manual__2026-01-03T16:52:04.625558+00:00 [queued]>
+[2026-01-03T16:56:00.002+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: main_pipeline.set_staging_model manual__2026-01-03T16:52:04.625558+00:00 [queued]>
+[2026-01-03T16:56:00.003+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-03T16:56:00.088+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): set_staging_model> on 2026-01-03 16:52:04.625558+00:00
+[2026-01-03T16:56:00.292+0000] {standard_task_runner.py:64} INFO - Started process 11929 to run task
+[2026-01-03T16:56:00.458+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'main_pipeline', 'set_staging_model', 'manual__2026-01-03T16:52:04.625558+00:00', '--job-id', '330', '--raw', '--subdir', 'DAGS_FOLDER/pipeline/main.py', '--cfg-path', '/tmp/tmp65j003tf']
+[2026-01-03T16:56:00.513+0000] {standard_task_runner.py:91} INFO - Job 330: Subtask set_staging_model
+[2026-01-03T16:56:01.615+0000] {task_command.py:426} INFO - Running <TaskInstance: main_pipeline.set_staging_model manual__2026-01-03T16:52:04.625558+00:00 [running]> on host 8574a19215f6
+[2026-01-03T16:56:02.613+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='main_pipeline' AIRFLOW_CTX_TASK_ID='set_staging_model' AIRFLOW_CTX_EXECUTION_DATE='2026-01-03T16:52:04.625558+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-03T16:52:04.625558+00:00'
+[2026-01-03T16:56:02.616+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-03T16:56:06.596+0000] {logging_mixin.py:188} INFO - 9ff30d5394c441219677eb9fe2b0dbca
+[2026-01-03T16:56:06.924+0000] {logging_mixin.py:188} WARNING - Registered model 'price_prediction' already exists. Creating a new version of this model...
+[2026-01-03T16:56:07.148+0000] {logging_mixin.py:188} WARNING - 2026/01/03 16:56:07 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation. Model name: price_prediction, version 24
+[2026-01-03T16:56:07.152+0000] {logging_mixin.py:188} WARNING - Created version '24' of model 'price_prediction'.
+[2026-01-03T16:56:08.257+0000] {logging_mixin.py:188} INFO - 9ff30d5394c441219677eb9fe2b0dbca
+[2026-01-03T16:56:08.377+0000] {logging_mixin.py:188} WARNING - Registered model 'price_prediction' already exists. Creating a new version of this model...
+[2026-01-03T16:56:08.689+0000] {logging_mixin.py:188} WARNING - 2026/01/03 16:56:08 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation. Model name: price_prediction, version 25
+[2026-01-03T16:56:08.694+0000] {logging_mixin.py:188} WARNING - Created version '25' of model 'price_prediction'.
+[2026-01-03T16:56:09.016+0000] {logging_mixin.py:188} INFO - New model was set to Staging!
+[2026-01-03T16:56:09.019+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-01-03T16:56:09.021+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-03T16:56:09.254+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=main_pipeline, task_id=set_staging_model, run_id=manual__2026-01-03T16:52:04.625558+00:00, execution_date=20260103T165204, start_date=20260103T165559, end_date=20260103T165609
+[2026-01-03T16:56:09.613+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-01-03T16:56:09.806+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-03T16:56:09.853+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

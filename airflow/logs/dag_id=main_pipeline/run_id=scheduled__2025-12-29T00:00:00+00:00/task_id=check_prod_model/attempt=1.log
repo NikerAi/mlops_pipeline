@@ -1,0 +1,64 @@
+[2025-12-30T09:12:25.519+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-30T09:12:25.632+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: main_pipeline.check_prod_model scheduled__2025-12-29T00:00:00+00:00 [queued]>
+[2025-12-30T09:12:25.663+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: main_pipeline.check_prod_model scheduled__2025-12-29T00:00:00+00:00 [queued]>
+[2025-12-30T09:12:25.664+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-30T09:12:25.737+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): check_prod_model> on 2025-12-29 00:00:00+00:00
+[2025-12-30T09:12:25.784+0000] {standard_task_runner.py:64} INFO - Started process 1063 to run task
+[2025-12-30T09:12:25.813+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'main_pipeline', 'check_prod_model', 'scheduled__2025-12-29T00:00:00+00:00', '--job-id', '79', '--raw', '--subdir', 'DAGS_FOLDER/pipeline/main.py', '--cfg-path', '/tmp/tmp7t484wb1']
+[2025-12-30T09:12:25.837+0000] {standard_task_runner.py:91} INFO - Job 79: Subtask check_prod_model
+[2025-12-30T09:12:26.095+0000] {task_command.py:426} INFO - Running <TaskInstance: main_pipeline.check_prod_model scheduled__2025-12-29T00:00:00+00:00 [running]> on host 72b76ef3d5d8
+[2025-12-30T09:12:26.680+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='main_pipeline' AIRFLOW_CTX_TASK_ID='check_prod_model' AIRFLOW_CTX_EXECUTION_DATE='2025-12-29T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-29T00:00:00+00:00'
+[2025-12-30T09:12:26.683+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-30T09:12:34.655+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/pydantic/_internal/_fields.py:161 UserWarning: Field "model_server_url" has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+[2025-12-30T09:12:34.704+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/pydantic/_internal/_config.py:341 UserWarning: Valid config keys have changed in V2:
+* 'schema_extra' has been renamed to 'json_schema_extra'
+[2025-12-30T09:12:34.790+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-30T09:12:34.793+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/pipeline/main.py", line 51, in check_prod_model
+    prod_version = client.get_latest_versions(name=EXPERIMENT_NAME, stages=["Production"])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/tracking/client.py", line 2429, in get_latest_versions
+    return self._get_registry_client().get_latest_versions(name, stages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/tracking/_model_registry/client.py", line 139, in get_latest_versions
+    return self.store.get_latest_versions(name, stages)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/store/model_registry/file_store.py", line 360, in get_latest_versions
+    registered_model_path = self._get_registered_model_path(name)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/store/model_registry/file_store.py", line 184, in _get_registered_model_path
+    _validate_model_name(name)
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/store/model_registry/file_store.py", line 73, in _validate_model_name
+    _original_validate_model_name(name)
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/utils/validation.py", line 368, in _validate_model_name
+    raise MlflowException("Registered model name cannot be empty.", INVALID_PARAMETER_VALUE)
+mlflow.exceptions.MlflowException: Registered model name cannot be empty.
+[2025-12-30T09:12:34.920+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=main_pipeline, task_id=check_prod_model, run_id=scheduled__2025-12-29T00:00:00+00:00, execution_date=20251229T000000, start_date=20251230T091225, end_date=20251230T091234
+[2025-12-30T09:12:35.004+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 79 for task check_prod_model (Registered model name cannot be empty.; 1063)
+[2025-12-30T09:12:35.082+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-12-30T09:12:35.150+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-30T09:12:35.162+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

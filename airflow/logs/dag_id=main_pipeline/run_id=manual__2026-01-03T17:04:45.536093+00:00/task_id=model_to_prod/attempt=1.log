@@ -1,0 +1,20 @@
+[2026-01-03T17:09:50.498+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-03T17:09:50.742+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: main_pipeline.model_to_prod manual__2026-01-03T17:04:45.536093+00:00 [queued]>
+[2026-01-03T17:09:50.804+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: main_pipeline.model_to_prod manual__2026-01-03T17:04:45.536093+00:00 [queued]>
+[2026-01-03T17:09:50.805+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-03T17:09:50.882+0000] {taskinstance.py:2330} INFO - Executing <Task(_BranchPythonDecoratedOperator): model_to_prod> on 2026-01-03 17:04:45.536093+00:00
+[2026-01-03T17:09:50.942+0000] {standard_task_runner.py:64} INFO - Started process 12885 to run task
+[2026-01-03T17:09:50.973+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'main_pipeline', 'model_to_prod', 'manual__2026-01-03T17:04:45.536093+00:00', '--job-id', '341', '--raw', '--subdir', 'DAGS_FOLDER/pipeline/main.py', '--cfg-path', '/tmp/tmp6p89jeyh']
+[2026-01-03T17:09:50.986+0000] {standard_task_runner.py:91} INFO - Job 341: Subtask model_to_prod
+[2026-01-03T17:09:51.427+0000] {task_command.py:426} INFO - Running <TaskInstance: main_pipeline.model_to_prod manual__2026-01-03T17:04:45.536093+00:00 [running]> on host 8574a19215f6
+[2026-01-03T17:09:52.375+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='main_pipeline' AIRFLOW_CTX_TASK_ID='model_to_prod' AIRFLOW_CTX_EXECUTION_DATE='2026-01-03T17:04:45.536093+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-03T17:04:45.536093+00:00'
+[2026-01-03T17:09:52.387+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-03T17:09:52.396+0000] {python.py:237} INFO - Done. Returned value was: set_new_prod_model
+[2026-01-03T17:09:52.397+0000] {branch.py:36} INFO - Branch into set_new_prod_model
+[2026-01-03T17:09:52.401+0000] {skipmixin.py:178} INFO - Following branch set_new_prod_model
+[2026-01-03T17:09:52.586+0000] {skipmixin.py:246} INFO - Skipping tasks [('end_model_setup', -1)]
+[2026-01-03T17:09:52.852+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-03T17:09:54.274+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=main_pipeline, task_id=model_to_prod, run_id=manual__2026-01-03T17:04:45.536093+00:00, execution_date=20260103T170445, start_date=20260103T170950, end_date=20260103T170954
+[2026-01-03T17:09:54.467+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-01-03T17:09:54.606+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-03T17:09:54.615+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

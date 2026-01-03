@@ -1,0 +1,68 @@
+[2025-12-28T07:54:39.930+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-28T07:54:40.049+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_distribution_comparison.compare_distributions scheduled__2025-12-27T00:00:00+00:00 [queued]>
+[2025-12-28T07:54:40.082+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_distribution_comparison.compare_distributions scheduled__2025-12-27T00:00:00+00:00 [queued]>
+[2025-12-28T07:54:40.084+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-28T07:54:40.137+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): compare_distributions> on 2025-12-27 00:00:00+00:00
+[2025-12-28T07:54:40.209+0000] {standard_task_runner.py:64} INFO - Started process 327 to run task
+[2025-12-28T07:54:40.218+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_distribution_comparison', 'compare_distributions', 'scheduled__2025-12-27T00:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/dag_test/dag_test.py', '--cfg-path', '/tmp/tmp7taxi3sh']
+[2025-12-28T07:54:40.232+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask compare_distributions
+[2025-12-28T07:54:40.478+0000] {task_command.py:426} INFO - Running <TaskInstance: data_distribution_comparison.compare_distributions scheduled__2025-12-27T00:00:00+00:00 [running]> on host 988a74b9d313
+[2025-12-28T07:54:43.810+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_distribution_comparison' AIRFLOW_CTX_TASK_ID='compare_distributions' AIRFLOW_CTX_EXECUTION_DATE='2025-12-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-27T00:00:00+00:00'
+[2025-12-28T07:54:43.813+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-28T07:54:44.493+0000] {python.py:237} INFO - Done. Returned value was: {'carat': [0.43569118044409394, 0], 'depth': [0.4326962493459453, 0], 'table': [0.5239001098853069, 0], 'price': [0.3895980903481501, 0], 'x': [0.3212352750864069, 0], 'y': [0.45627298912185466, 0], 'z': [0.41551672462364964, 0], 'cut': [0.0006339893646669511, 0], 'color': [0.0008841471247174081, 0], 'clarity': [0.0005630430487490322, 0]}
+[2025-12-28T07:54:44.494+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-28T07:54:44.597+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_distribution_comparison, task_id=compare_distributions, run_id=scheduled__2025-12-27T00:00:00+00:00, execution_date=20251227T000000, start_date=20251228T075440, end_date=20251228T075444
+[2025-12-28T07:54:44.780+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-28T07:54:44.878+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-28T07:54:44.884+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-28T09:53:35.238+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-28T09:53:35.355+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_distribution_comparison.compare_distributions scheduled__2025-12-27T00:00:00+00:00 [queued]>
+[2025-12-28T09:53:35.394+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_distribution_comparison.compare_distributions scheduled__2025-12-27T00:00:00+00:00 [queued]>
+[2025-12-28T09:53:35.395+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-28T09:53:35.438+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): compare_distributions> on 2025-12-27 00:00:00+00:00
+[2025-12-28T09:53:35.481+0000] {standard_task_runner.py:64} INFO - Started process 261 to run task
+[2025-12-28T09:53:35.490+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_distribution_comparison', 'compare_distributions', 'scheduled__2025-12-27T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/dag_test/dag_test.py', '--cfg-path', '/tmp/tmp7mdexkaq']
+[2025-12-28T09:53:35.500+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask compare_distributions
+[2025-12-28T09:53:35.719+0000] {task_command.py:426} INFO - Running <TaskInstance: data_distribution_comparison.compare_distributions scheduled__2025-12-27T00:00:00+00:00 [running]> on host 46629e0044cf
+[2025-12-28T09:53:39.990+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_distribution_comparison' AIRFLOW_CTX_TASK_ID='compare_distributions' AIRFLOW_CTX_EXECUTION_DATE='2025-12-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-27T00:00:00+00:00'
+[2025-12-28T09:53:39.993+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-28T09:53:40.528+0000] {python.py:237} INFO - Done. Returned value was: {'carat': [0.43569118044409394, 0], 'depth': [0.4326962493459453, 0], 'table': [0.5239001098853069, 0], 'price': [0.3895980903481501, 0], 'x': [0.3212352750864069, 0], 'y': [0.45627298912185466, 0], 'z': [0.41551672462364964, 0], 'cut': [0.0006339893646669511, 0], 'color': [0.0008841471247174081, 0], 'clarity': [0.0005630430487490322, 0]}
+[2025-12-28T09:53:40.533+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-28T09:53:40.653+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_distribution_comparison, task_id=compare_distributions, run_id=scheduled__2025-12-27T00:00:00+00:00, execution_date=20251227T000000, start_date=20251228T095335, end_date=20251228T095340
+[2025-12-28T09:53:40.774+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-28T09:53:40.887+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-28T09:53:40.896+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-28T13:07:15.725+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-28T13:07:16.205+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_distribution_comparison.compare_distributions scheduled__2025-12-27T00:00:00+00:00 [queued]>
+[2025-12-28T13:07:16.275+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_distribution_comparison.compare_distributions scheduled__2025-12-27T00:00:00+00:00 [queued]>
+[2025-12-28T13:07:16.291+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-28T13:07:16.435+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): compare_distributions> on 2025-12-27 00:00:00+00:00
+[2025-12-28T13:07:16.537+0000] {standard_task_runner.py:64} INFO - Started process 369 to run task
+[2025-12-28T13:07:16.561+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_distribution_comparison', 'compare_distributions', 'scheduled__2025-12-27T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/dag_test/dag_test.py', '--cfg-path', '/tmp/tmp9vxsybwg']
+[2025-12-28T13:07:16.577+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask compare_distributions
+[2025-12-28T13:07:16.951+0000] {task_command.py:426} INFO - Running <TaskInstance: data_distribution_comparison.compare_distributions scheduled__2025-12-27T00:00:00+00:00 [running]> on host 808703d7a6a8
+[2025-12-28T13:07:29.496+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_distribution_comparison' AIRFLOW_CTX_TASK_ID='compare_distributions' AIRFLOW_CTX_EXECUTION_DATE='2025-12-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-27T00:00:00+00:00'
+[2025-12-28T13:07:29.507+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-28T13:07:32.612+0000] {python.py:237} INFO - Done. Returned value was: {'carat': [0.43569118044409394, 0], 'depth': [0.4326962493459453, 0], 'table': [0.5239001098853069, 0], 'price': [0.3895980903481501, 0], 'x': [0.3212352750864069, 0], 'y': [0.45627298912185466, 0], 'z': [0.41551672462364964, 0], 'cut': [0.0006339893646669511, 0], 'color': [0.0008841471247174081, 0], 'clarity': [0.0005630430487490322, 0]}
+[2025-12-28T13:07:32.624+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-28T13:07:33.575+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_distribution_comparison, task_id=compare_distributions, run_id=scheduled__2025-12-27T00:00:00+00:00, execution_date=20251227T000000, start_date=20251228T130716, end_date=20251228T130733
+[2025-12-28T13:07:33.859+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-28T13:07:33.963+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-28T13:07:33.972+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-12-28T15:20:44.979+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-28T15:20:45.280+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_distribution_comparison.compare_distributions scheduled__2025-12-27T00:00:00+00:00 [queued]>
+[2025-12-28T15:20:45.376+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_distribution_comparison.compare_distributions scheduled__2025-12-27T00:00:00+00:00 [queued]>
+[2025-12-28T15:20:45.379+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-28T15:20:45.517+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): compare_distributions> on 2025-12-27 00:00:00+00:00
+[2025-12-28T15:20:45.624+0000] {standard_task_runner.py:64} INFO - Started process 298 to run task
+[2025-12-28T15:20:45.640+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_distribution_comparison', 'compare_distributions', 'scheduled__2025-12-27T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/dag_test/dag_test.py', '--cfg-path', '/tmp/tmpeso5cizl']
+[2025-12-28T15:20:45.675+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask compare_distributions
+[2025-12-28T15:20:46.358+0000] {task_command.py:426} INFO - Running <TaskInstance: data_distribution_comparison.compare_distributions scheduled__2025-12-27T00:00:00+00:00 [running]> on host 298f1553f9dd
+[2025-12-28T15:20:55.314+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_distribution_comparison' AIRFLOW_CTX_TASK_ID='compare_distributions' AIRFLOW_CTX_EXECUTION_DATE='2025-12-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-27T00:00:00+00:00'
+[2025-12-28T15:20:55.326+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-28T15:20:56.618+0000] {python.py:237} INFO - Done. Returned value was: {'carat': [0.43569118044409394, 0], 'depth': [0.4326962493459453, 0], 'table': [0.5239001098853069, 0], 'price': [0.3895980903481501, 0], 'x': [0.3212352750864069, 0], 'y': [0.45627298912185466, 0], 'z': [0.41551672462364964, 0], 'cut': [0.0006339893646669511, 0], 'color': [0.0008841471247174081, 0], 'clarity': [0.0005630430487490322, 0]}
+[2025-12-28T15:20:56.620+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-28T15:20:56.801+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_distribution_comparison, task_id=compare_distributions, run_id=scheduled__2025-12-27T00:00:00+00:00, execution_date=20251227T000000, start_date=20251228T152045, end_date=20251228T152056
+[2025-12-28T15:20:57.090+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-12-28T15:20:57.309+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-28T15:20:57.345+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

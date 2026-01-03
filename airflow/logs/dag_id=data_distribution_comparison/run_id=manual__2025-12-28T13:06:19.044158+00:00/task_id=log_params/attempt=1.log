@@ -1,0 +1,84 @@
+[2025-12-28T13:06:38.164+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-28T13:06:39.159+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_distribution_comparison.log_params manual__2025-12-28T13:06:19.044158+00:00 [queued]>
+[2025-12-28T13:06:39.273+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_distribution_comparison.log_params manual__2025-12-28T13:06:19.044158+00:00 [queued]>
+[2025-12-28T13:06:39.276+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-12-28T13:06:39.527+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): log_params> on 2025-12-28 13:06:19.044158+00:00
+[2025-12-28T13:06:39.630+0000] {standard_task_runner.py:64} INFO - Started process 332 to run task
+[2025-12-28T13:06:39.688+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_distribution_comparison', 'log_params', 'manual__2025-12-28T13:06:19.044158+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag_test/dag_test.py', '--cfg-path', '/tmp/tmpsd47_rfo']
+[2025-12-28T13:06:39.718+0000] {standard_task_runner.py:91} INFO - Job 2: Subtask log_params
+[2025-12-28T13:06:40.226+0000] {task_command.py:426} INFO - Running <TaskInstance: data_distribution_comparison.log_params manual__2025-12-28T13:06:19.044158+00:00 [running]> on host 808703d7a6a8
+[2025-12-28T13:06:41.155+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_distribution_comparison' AIRFLOW_CTX_TASK_ID='log_params' AIRFLOW_CTX_EXECUTION_DATE='2025-12-28T13:06:19.044158+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-28T13:06:19.044158+00:00'
+[2025-12-28T13:06:41.174+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-28T13:07:08.058+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/pydantic/_internal/_fields.py:161 UserWarning: Field "model_server_url" has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+[2025-12-28T13:07:08.137+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/pydantic/_internal/_config.py:341 UserWarning: Valid config keys have changed in V2:
+* 'schema_extra' has been renamed to 'json_schema_extra'
+[2025-12-28T13:07:16.581+0000] {font_manager.py:1547} INFO - generated new fontManager
+[2025-12-28T13:07:49.037+0000] {logging_mixin.py:188} INFO - set env
+[2025-12-28T13:07:49.053+0000] {logging_mixin.py:188} INFO - set uri
+[2025-12-28T13:07:50.586+0000] {logging_mixin.py:188} WARNING - 2025/12/28 13:07:50 INFO mlflow.tracking.fluent: Experiment with name 'test' does not exist. Creating a new experiment.
+[2025-12-28T13:07:50.835+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-28T13:07:50.837+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_test/dag_test.py", line 100, in log_params
+    mlflow.set_experiment("test")
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/tracking/fluent.py", line 137, in set_experiment
+    experiment_id = client.create_experiment(experiment_name)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/tracking/client.py", line 558, in create_experiment
+    return self._tracking_client.create_experiment(name, artifact_location, tags)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/tracking/_tracking_service/client.py", line 234, in create_experiment
+    return self.store.create_experiment(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/store/tracking/rest_store.py", line 98, in create_experiment
+    response_proto = self._call_endpoint(CreateExperiment, req_body)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/store/tracking/rest_store.py", line 59, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/utils/rest_utils.py", line 202, in call_endpoint
+    response = verify_rest_response(response, endpoint)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/utils/rest_utils.py", line 134, in verify_rest_response
+    raise RestException(json.loads(response.text))
+mlflow.exceptions.RestException: RESOURCE_ALREADY_EXISTS: Experiment(name=test) already exists. Error: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "experiments_name_key"
+DETAIL:  Key (name)=(test) already exists.
+
+[SQL: INSERT INTO experiments (name, artifact_location, lifecycle_stage, creation_time, last_update_time) VALUES (%(name)s, %(artifact_location)s, %(lifecycle_stage)s, %(creation_time)s, %(last_update_time)s) RETURNING experiments.experiment_id]
+[parameters: {'name': 'test', 'artifact_location': '', 'lifecycle_stage': 'active', 'creation_time': 1766927270625, 'last_update_time': 1766927270625}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-12-28T13:07:51.079+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=data_distribution_comparison, task_id=log_params, run_id=manual__2025-12-28T13:06:19.044158+00:00, execution_date=20251228T130619, start_date=20251228T130639, end_date=20251228T130751
+[2025-12-28T13:07:51.342+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 2 for task log_params (RESOURCE_ALREADY_EXISTS: Experiment(name=test) already exists. Error: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "experiments_name_key"
+DETAIL:  Key (name)=(test) already exists.
+
+[SQL: INSERT INTO experiments (name, artifact_location, lifecycle_stage, creation_time, last_update_time) VALUES (%(name)s, %(artifact_location)s, %(lifecycle_stage)s, %(creation_time)s, %(last_update_time)s) RETURNING experiments.experiment_id]
+[parameters: {'name': 'test', 'artifact_location': '', 'lifecycle_stage': 'active', 'creation_time': 1766927270625, 'last_update_time': 1766927270625}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj); 332)
+[2025-12-28T13:07:51.567+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-12-28T13:07:51.676+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-28T13:07:51.695+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

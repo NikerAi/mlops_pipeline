@@ -1,0 +1,21 @@
+[2026-01-02T18:39:59.621+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-02T18:39:59.830+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: main_pipeline.check_drift manual__2026-01-02T18:39:01.647609+00:00 [queued]>
+[2026-01-02T18:39:59.884+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: main_pipeline.check_drift manual__2026-01-02T18:39:01.647609+00:00 [queued]>
+[2026-01-02T18:39:59.885+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-02T18:39:59.958+0000] {taskinstance.py:2330} INFO - Executing <Task(_BranchPythonDecoratedOperator): check_drift> on 2026-01-02 18:39:01.647609+00:00
+[2026-01-02T18:40:00.018+0000] {standard_task_runner.py:64} INFO - Started process 292 to run task
+[2026-01-02T18:40:00.046+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'main_pipeline', 'check_drift', 'manual__2026-01-02T18:39:01.647609+00:00', '--job-id', '171', '--raw', '--subdir', 'DAGS_FOLDER/pipeline/main.py', '--cfg-path', '/tmp/tmp7n9444b9']
+[2026-01-02T18:40:00.059+0000] {standard_task_runner.py:91} INFO - Job 171: Subtask check_drift
+[2026-01-02T18:40:00.367+0000] {task_command.py:426} INFO - Running <TaskInstance: main_pipeline.check_drift manual__2026-01-02T18:39:01.647609+00:00 [running]> on host e163b62ba314
+[2026-01-02T18:40:01.575+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='main_pipeline' AIRFLOW_CTX_TASK_ID='check_drift' AIRFLOW_CTX_EXECUTION_DATE='2026-01-02T18:39:01.647609+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-02T18:39:01.647609+00:00'
+[2026-01-02T18:40:01.578+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-02T18:40:01.581+0000] {logging_mixin.py:188} INFO - Data drift detected in price
+[2026-01-02T18:40:01.581+0000] {logging_mixin.py:188} INFO - Data drift detected in color
+[2026-01-02T18:40:01.586+0000] {python.py:237} INFO - Done. Returned value was: train_model__1
+[2026-01-02T18:40:01.587+0000] {branch.py:36} INFO - Branch into train_model__1
+[2026-01-02T18:40:01.588+0000] {skipmixin.py:178} INFO - Following branch train_model__1
+[2026-01-02T18:40:01.755+0000] {skipmixin.py:246} INFO - Skipping tasks [('check_end', -1)]
+[2026-01-02T18:40:01.931+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-02T18:40:02.077+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=main_pipeline, task_id=check_drift, run_id=manual__2026-01-02T18:39:01.647609+00:00, execution_date=20260102T183901, start_date=20260102T183959, end_date=20260102T184002
+[2026-01-02T18:40:02.272+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-01-02T18:40:02.354+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,23 @@
+[2026-01-02T11:07:39.354+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-02T11:07:39.459+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: main_pipeline.check_prod_model manual__2026-01-02T11:07:33.917711+00:00 [queued]>
+[2026-01-02T11:07:39.483+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: main_pipeline.check_prod_model manual__2026-01-02T11:07:33.917711+00:00 [queued]>
+[2026-01-02T11:07:39.484+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-02T11:07:39.515+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): check_prod_model> on 2026-01-02 11:07:33.917711+00:00
+[2026-01-02T11:07:39.551+0000] {standard_task_runner.py:64} INFO - Started process 940 to run task
+[2026-01-02T11:07:39.561+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'main_pipeline', 'check_prod_model', 'manual__2026-01-02T11:07:33.917711+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/pipeline/main.py', '--cfg-path', '/tmp/tmpewh19lem']
+[2026-01-02T11:07:39.569+0000] {standard_task_runner.py:91} INFO - Job 13: Subtask check_prod_model
+[2026-01-02T11:07:39.829+0000] {task_command.py:426} INFO - Running <TaskInstance: main_pipeline.check_prod_model manual__2026-01-02T11:07:33.917711+00:00 [running]> on host 11cfdbba07aa
+[2026-01-02T11:07:40.159+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='main_pipeline' AIRFLOW_CTX_TASK_ID='check_prod_model' AIRFLOW_CTX_EXECUTION_DATE='2026-01-02T11:07:33.917711+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-02T11:07:33.917711+00:00'
+[2026-01-02T11:07:40.163+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-02T11:07:44.224+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/pydantic/_internal/_fields.py:161 UserWarning: Field "model_server_url" has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+[2026-01-02T11:07:44.266+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/pydantic/_internal/_config.py:341 UserWarning: Valid config keys have changed in V2:
+* 'schema_extra' has been renamed to 'json_schema_extra'
+[2026-01-02T11:07:44.545+0000] {logging_mixin.py:188} INFO - Production model not found
+[2026-01-02T11:07:44.546+0000] {python.py:237} INFO - Done. Returned value was: {}
+[2026-01-02T11:07:44.546+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-02T11:07:44.699+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=main_pipeline, task_id=check_prod_model, run_id=manual__2026-01-02T11:07:33.917711+00:00, execution_date=20260102T110733, start_date=20260102T110739, end_date=20260102T110744
+[2026-01-02T11:07:44.834+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-01-02T11:07:44.955+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-02T11:07:44.975+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

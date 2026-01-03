@@ -1,0 +1,55 @@
+[2026-01-03T12:20:15.152+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-03T12:20:15.439+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: main_pipeline.compare_distributions manual__2026-01-03T12:19:42.533626+00:00 [queued]>
+[2026-01-03T12:20:15.520+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: main_pipeline.compare_distributions manual__2026-01-03T12:19:42.533626+00:00 [queued]>
+[2026-01-03T12:20:15.520+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-03T12:20:15.631+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): compare_distributions> on 2026-01-03 12:19:42.533626+00:00
+[2026-01-03T12:20:15.740+0000] {standard_task_runner.py:64} INFO - Started process 724 to run task
+[2026-01-03T12:20:15.746+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'main_pipeline', 'compare_distributions', 'manual__2026-01-03T12:19:42.533626+00:00', '--job-id', '215', '--raw', '--subdir', 'DAGS_FOLDER/pipeline/main.py', '--cfg-path', '/tmp/tmppybdm6vb']
+[2026-01-03T12:20:15.751+0000] {standard_task_runner.py:91} INFO - Job 215: Subtask compare_distributions
+[2026-01-03T12:20:16.353+0000] {task_command.py:426} INFO - Running <TaskInstance: main_pipeline.compare_distributions manual__2026-01-03T12:19:42.533626+00:00 [running]> on host 0827c9bf42bd
+[2026-01-03T12:20:17.340+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='main_pipeline' AIRFLOW_CTX_TASK_ID='compare_distributions' AIRFLOW_CTX_EXECUTION_DATE='2026-01-03T12:19:42.533626+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-03T12:19:42.533626+00:00'
+[2026-01-03T12:20:17.351+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-03T12:20:23.933+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
+[2026-01-03T12:20:31.192+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+[2026-01-03T12:20:31.199+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+[2026-01-03T12:20:31.203+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-03T12:20:31.204+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/pipeline/main.py", line 168, in compare_distributions
+    mlflow.artifacts.download_artifacts(
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/artifacts/__init__.py", line 69, in download_artifacts
+    return artifact_repo.download_artifacts(artifact_path, dst_path=dst_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/mlflow/store/artifact/artifact_repo.py", line 221, in download_artifacts
+    raise MlflowException(
+mlflow.exceptions.MlflowException: The following failures occurred while downloading one or more artifacts from s3://mlflow/1/c1753623e0ed4eaa968d1f7834cce56f/artifacts:
+##### File Train.csv #####
+An error occurred (404) when calling the HeadObject operation: Not Found
+[2026-01-03T12:20:31.454+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=main_pipeline, task_id=compare_distributions, run_id=manual__2026-01-03T12:19:42.533626+00:00, execution_date=20260103T121942, start_date=20260103T122015, end_date=20260103T122031
+[2026-01-03T12:20:31.514+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 215 for task compare_distributions (The following failures occurred while downloading one or more artifacts from s3://mlflow/1/c1753623e0ed4eaa968d1f7834cce56f/artifacts:
+##### File Train.csv #####
+An error occurred (404) when calling the HeadObject operation: Not Found; 724)
+[2026-01-03T12:20:31.703+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-01-03T12:20:32.087+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-01-03T12:20:32.119+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

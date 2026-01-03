@@ -1,0 +1,49 @@
+[2026-01-03T14:11:30.062+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-03T14:11:30.635+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: main_pipeline.compare_distributions manual__2026-01-03T14:10:43.988679+00:00 [queued]>
+[2026-01-03T14:11:30.852+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: main_pipeline.compare_distributions manual__2026-01-03T14:10:43.988679+00:00 [queued]>
+[2026-01-03T14:11:30.866+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-03T14:11:31.075+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): compare_distributions> on 2026-01-03 14:10:43.988679+00:00
+[2026-01-03T14:11:31.189+0000] {standard_task_runner.py:64} INFO - Started process 3343 to run task
+[2026-01-03T14:11:31.195+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'main_pipeline', 'compare_distributions', 'manual__2026-01-03T14:10:43.988679+00:00', '--job-id', '230', '--raw', '--subdir', 'DAGS_FOLDER/pipeline/main.py', '--cfg-path', '/tmp/tmp5yq1ukjp']
+[2026-01-03T14:11:31.211+0000] {standard_task_runner.py:91} INFO - Job 230: Subtask compare_distributions
+[2026-01-03T14:11:31.648+0000] {task_command.py:426} INFO - Running <TaskInstance: main_pipeline.compare_distributions manual__2026-01-03T14:10:43.988679+00:00 [running]> on host 8574a19215f6
+[2026-01-03T14:11:32.521+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='main_pipeline' AIRFLOW_CTX_TASK_ID='compare_distributions' AIRFLOW_CTX_EXECUTION_DATE='2026-01-03T14:10:43.988679+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-03T14:10:43.988679+00:00'
+[2026-01-03T14:11:32.535+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-03T14:11:44.616+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
+[2026-01-03T14:11:46.614+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+[2026-01-03T14:11:46.619+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 482.16it/s]
+[2026-01-03T14:11:46.636+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 51.42it/s] 
+[2026-01-03T14:11:46.784+0000] {logging_mixin.py:188} INFO - {"status":"updated","traffic":{"a":0.5,"b":0.5,"data_size":5000,"drift_cols":["price","color"]}}
+[2026-01-03T14:11:48.225+0000] {logging_mixin.py:188} INFO - {'data':       carat        cut color clarity  ...         price     x     y     z
+0      0.56  Very Good     E      IF  ...   5020.010543  5.26  5.30  3.30
+1      1.12    Premium     H     SI2  ...   4277.000000  6.59  6.64  4.13
+2      0.32    Premium     F     VS2  ...    900.000000  4.39  4.35  2.68
+3      0.71    Premium     I    VVS1  ...   3952.000000  5.89  5.81  3.44
+4      0.34      Ideal     G    VVS2  ...    980.262788  4.48  4.49  2.79
+...     ...        ...   ...     ...  ...           ...   ...   ...   ...
+4995   0.71  Very Good     J     SI1  ...   1128.741656  5.64  5.68  3.59
+4996   0.50      Ideal     D     VS2  ...   1691.000000  5.07  5.10  3.19
+4997   0.52      Ideal     D    VVS2  ...   1197.915098  5.18  5.15  3.18
+4998   1.54    Premium     F     VS2  ...  11539.102824  7.44  7.39  4.51
+4999   1.01      Ideal     E     VS2  ...   5306.000000  6.41  6.39  4.01
+
+[5000 rows x 10 columns], 'drift_info': {'carat': [0.3597942190499597, 0], 'depth': [0.5567758267089287, 0], 'table': [0.2164014157416963, 0], 'x': [0.17307080993570942, 0], 'y': [0.35473491218790243, 0], 'z': [0.5272913637881208, 0], 'price': [0.1750613567647656, 0], 'cut': [0.0029048419929586515, 0], 'color': [0.001399892578273862, 0], 'clarity': [0.0016356731314428662, 0]}}
+[2026-01-03T14:11:48.225+0000] {python.py:237} INFO - Done. Returned value was: {'data':       carat        cut color clarity  ...         price     x     y     z
+0      0.56  Very Good     E      IF  ...   5020.010543  5.26  5.30  3.30
+1      1.12    Premium     H     SI2  ...   4277.000000  6.59  6.64  4.13
+2      0.32    Premium     F     VS2  ...    900.000000  4.39  4.35  2.68
+3      0.71    Premium     I    VVS1  ...   3952.000000  5.89  5.81  3.44
+4      0.34      Ideal     G    VVS2  ...    980.262788  4.48  4.49  2.79
+...     ...        ...   ...     ...  ...           ...   ...   ...   ...
+4995   0.71  Very Good     J     SI1  ...   1128.741656  5.64  5.68  3.59
+4996   0.50      Ideal     D     VS2  ...   1691.000000  5.07  5.10  3.19
+4997   0.52      Ideal     D    VVS2  ...   1197.915098  5.18  5.15  3.18
+4998   1.54    Premium     F     VS2  ...  11539.102824  7.44  7.39  4.51
+4999   1.01      Ideal     E     VS2  ...   5306.000000  6.41  6.39  4.01
+
+[5000 rows x 10 columns], 'drift_info': {'carat': [0.3597942190499597, 0], 'depth': [0.5567758267089287, 0], 'table': [0.2164014157416963, 0], 'x': [0.17307080993570942, 0], 'y': [0.35473491218790243, 0], 'z': [0.5272913637881208, 0], 'price': [0.1750613567647656, 0], 'cut': [0.0029048419929586515, 0], 'color': [0.001399892578273862, 0], 'clarity': [0.0016356731314428662, 0]}}
+[2026-01-03T14:11:48.293+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-03T14:11:48.811+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=main_pipeline, task_id=compare_distributions, run_id=manual__2026-01-03T14:10:43.988679+00:00, execution_date=20260103T141043, start_date=20260103T141130, end_date=20260103T141148
+[2026-01-03T14:11:49.025+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-01-03T14:11:49.132+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-03T14:11:49.150+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

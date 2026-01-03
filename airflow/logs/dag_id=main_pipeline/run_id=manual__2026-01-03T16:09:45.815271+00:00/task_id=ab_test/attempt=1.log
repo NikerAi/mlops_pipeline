@@ -1,0 +1,54 @@
+[2026-01-03T16:13:56.557+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-03T16:13:56.684+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: main_pipeline.ab_test manual__2026-01-03T16:09:45.815271+00:00 [queued]>
+[2026-01-03T16:13:56.731+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: main_pipeline.ab_test manual__2026-01-03T16:09:45.815271+00:00 [queued]>
+[2026-01-03T16:13:56.732+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-03T16:13:56.866+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): ab_test> on 2026-01-03 16:09:45.815271+00:00
+[2026-01-03T16:13:56.937+0000] {standard_task_runner.py:64} INFO - Started process 9581 to run task
+[2026-01-03T16:13:56.954+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'main_pipeline', 'ab_test', 'manual__2026-01-03T16:09:45.815271+00:00', '--job-id', '313', '--raw', '--subdir', 'DAGS_FOLDER/pipeline/main.py', '--cfg-path', '/tmp/tmpdkpw0ca2']
+[2026-01-03T16:13:56.977+0000] {standard_task_runner.py:91} INFO - Job 313: Subtask ab_test
+[2026-01-03T16:13:57.281+0000] {task_command.py:426} INFO - Running <TaskInstance: main_pipeline.ab_test manual__2026-01-03T16:09:45.815271+00:00 [running]> on host 8574a19215f6
+[2026-01-03T16:13:58.597+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='main_pipeline' AIRFLOW_CTX_TASK_ID='ab_test' AIRFLOW_CTX_EXECUTION_DATE='2026-01-03T16:09:45.815271+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-03T16:09:45.815271+00:00'
+[2026-01-03T16:13:58.600+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-03T16:14:01.439+0000] {logging_mixin.py:188} INFO - <Response [200]>
+[2026-01-03T16:14:04.783+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
+[2026-01-03T16:14:09.971+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:   0%|          | 0/5 [00:00<?, ?it/s]
+[2026-01-03T16:14:10.019+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  20%|##        | 1/5 [00:00<00:00, 528.05it/s]
+[2026-01-03T16:14:10.103+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  40%|####      | 2/5 [00:00<00:00, 24.30it/s] 
+[2026-01-03T16:14:10.108+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  60%|######    | 3/5 [00:00<00:00, 33.30it/s]
+[2026-01-03T16:14:10.109+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  80%|########  | 4/5 [00:00<00:00, 43.10it/s]
+[2026-01-03T16:14:10.449+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 11.67it/s]
+[2026-01-03T16:14:10.457+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 11.67it/s]
+[2026-01-03T16:14:10.461+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 11.23it/s]
+[2026-01-03T16:14:43.279+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:   0%|          | 0/5 [00:00<?, ?it/s]
+[2026-01-03T16:14:43.579+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  20%|##        | 1/5 [00:00<00:01,  3.40it/s]
+[2026-01-03T16:14:43.612+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  20%|##        | 1/5 [00:00<00:01,  3.40it/s]
+[2026-01-03T16:14:43.622+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  40%|####      | 2/5 [00:00<00:00,  3.40it/s]
+[2026-01-03T16:14:43.845+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  60%|######    | 3/5 [00:00<00:00,  5.72it/s]
+[2026-01-03T16:14:43.858+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  60%|######    | 3/5 [00:00<00:00,  5.72it/s]
+[2026-01-03T16:14:43.948+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  80%|########  | 4/5 [00:00<00:00,  6.67it/s]
+[2026-01-03T16:14:43.949+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  80%|########  | 4/5 [00:00<00:00,  6.67it/s]
+[2026-01-03T16:14:44.379+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 5/5 [00:01<00:00,  4.12it/s]
+[2026-01-03T16:14:44.382+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 5/5 [00:01<00:00,  4.12it/s]
+[2026-01-03T16:14:44.383+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 5/5 [00:01<00:00,  4.55it/s]
+[2026-01-03T16:14:46.650+0000] {logging_mixin.py:188} WARNING - 2026/01/03 16:14:46 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2026-01-03T16:14:49.748+0000] {python.py:237} INFO - Done. Returned value was: worse
+[2026-01-03T16:14:49.749+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-03T16:14:50.118+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=main_pipeline, task_id=ab_test, run_id=manual__2026-01-03T16:09:45.815271+00:00, execution_date=20260103T160945, start_date=20260103T161356, end_date=20260103T161450
+[2026-01-03T16:14:50.556+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-01-03T16:14:50.740+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-03T16:14:50.762+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

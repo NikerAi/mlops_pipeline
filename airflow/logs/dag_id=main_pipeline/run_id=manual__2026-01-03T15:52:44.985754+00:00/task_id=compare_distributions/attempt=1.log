@@ -1,0 +1,50 @@
+[2026-01-03T15:53:29.760+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-03T15:53:29.943+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: main_pipeline.compare_distributions manual__2026-01-03T15:52:44.985754+00:00 [queued]>
+[2026-01-03T15:53:29.994+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: main_pipeline.compare_distributions manual__2026-01-03T15:52:44.985754+00:00 [queued]>
+[2026-01-03T15:53:29.995+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-03T15:53:30.135+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): compare_distributions> on 2026-01-03 15:52:44.985754+00:00
+[2026-01-03T15:53:30.276+0000] {standard_task_runner.py:64} INFO - Started process 8088 to run task
+[2026-01-03T15:53:30.267+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'main_pipeline', 'compare_distributions', 'manual__2026-01-03T15:52:44.985754+00:00', '--job-id', '296', '--raw', '--subdir', 'DAGS_FOLDER/pipeline/main.py', '--cfg-path', '/tmp/tmppc459b70']
+[2026-01-03T15:53:30.285+0000] {standard_task_runner.py:91} INFO - Job 296: Subtask compare_distributions
+[2026-01-03T15:53:30.713+0000] {task_command.py:426} INFO - Running <TaskInstance: main_pipeline.compare_distributions manual__2026-01-03T15:52:44.985754+00:00 [running]> on host 8574a19215f6
+[2026-01-03T15:53:31.533+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='main_pipeline' AIRFLOW_CTX_TASK_ID='compare_distributions' AIRFLOW_CTX_EXECUTION_DATE='2026-01-03T15:52:44.985754+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-03T15:52:44.985754+00:00'
+[2026-01-03T15:53:31.557+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-03T15:53:35.285+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
+[2026-01-03T15:53:36.147+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+[2026-01-03T15:53:36.154+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 2863.01it/s]
+[2026-01-03T15:53:36.158+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 153.93it/s] 
+[2026-01-03T15:53:36.190+0000] {logging_mixin.py:188} INFO - !!!!! ['y', 'z']
+[2026-01-03T15:53:36.213+0000] {logging_mixin.py:188} INFO - {"status":"updated","traffic":{"a":0.5,"b":0.5,"data_size":5000,"drift_cols":["y","z"]}}
+[2026-01-03T15:53:37.285+0000] {logging_mixin.py:188} INFO - {'data':       carat        cut color clarity  ...   price     x          y         z
+0      0.33    Premium     F     VS2  ...   666.0  4.40   7.815621  1.525612
+1      0.91  Very Good     E     SI2  ...  3968.0  6.13   6.472425  3.860000
+2      0.37      Ideal     H     VS2  ...   603.0  4.64   0.800457  3.518664
+3      1.01    Premium     F     SI2  ...  4072.0  6.49   1.988805  2.247115
+4      0.53    Premium     F     VS2  ...  1753.0  5.20   5.170000  2.622391
+...     ...        ...   ...     ...  ...     ...   ...        ...       ...
+4995   0.32      Ideal     I     VS1  ...   605.0  4.40   8.661114  2.730000
+4996   1.16    Premium     H     SI2  ...  4872.0  6.81   6.750000  4.190000
+4997   1.52      Ideal     J     SI1  ...  7491.0  7.37   6.406681  4.917603
+4998   1.13  Very Good     J     SI1  ...  4391.0  6.60  12.173033  4.160000
+4999   1.03    Premium     H     VS1  ...  5883.0  6.48   9.687451  2.751345
+
+[5000 rows x 10 columns], 'drift_info': {'carat': [0.8620472514155988, 0], 'depth': [0.008900441208434752, 1], 'table': [0.9930480031535904, 0], 'x': [0.8788601984817335, 0], 'y': [1.150397553936725e-46, 1], 'z': [9.455619572058636e-43, 1], 'price': [0.00030370617448326095, 1], 'cut': [0.003147519915203772, 0], 'color': [0.1446634480151854, 1], 'clarity': [0.0013603249526761526, 0]}}
+[2026-01-03T15:53:37.286+0000] {python.py:237} INFO - Done. Returned value was: {'data':       carat        cut color clarity  ...   price     x          y         z
+0      0.33    Premium     F     VS2  ...   666.0  4.40   7.815621  1.525612
+1      0.91  Very Good     E     SI2  ...  3968.0  6.13   6.472425  3.860000
+2      0.37      Ideal     H     VS2  ...   603.0  4.64   0.800457  3.518664
+3      1.01    Premium     F     SI2  ...  4072.0  6.49   1.988805  2.247115
+4      0.53    Premium     F     VS2  ...  1753.0  5.20   5.170000  2.622391
+...     ...        ...   ...     ...  ...     ...   ...        ...       ...
+4995   0.32      Ideal     I     VS1  ...   605.0  4.40   8.661114  2.730000
+4996   1.16    Premium     H     SI2  ...  4872.0  6.81   6.750000  4.190000
+4997   1.52      Ideal     J     SI1  ...  7491.0  7.37   6.406681  4.917603
+4998   1.13  Very Good     J     SI1  ...  4391.0  6.60  12.173033  4.160000
+4999   1.03    Premium     H     VS1  ...  5883.0  6.48   9.687451  2.751345
+
+[5000 rows x 10 columns], 'drift_info': {'carat': [0.8620472514155988, 0], 'depth': [0.008900441208434752, 1], 'table': [0.9930480031535904, 0], 'x': [0.8788601984817335, 0], 'y': [1.150397553936725e-46, 1], 'z': [9.455619572058636e-43, 1], 'price': [0.00030370617448326095, 1], 'cut': [0.003147519915203772, 0], 'color': [0.1446634480151854, 1], 'clarity': [0.0013603249526761526, 0]}}
+[2026-01-03T15:53:37.328+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-03T15:53:37.709+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=main_pipeline, task_id=compare_distributions, run_id=manual__2026-01-03T15:52:44.985754+00:00, execution_date=20260103T155244, start_date=20260103T155329, end_date=20260103T155337
+[2026-01-03T15:53:37.919+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-01-03T15:53:38.073+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-01-03T15:53:38.112+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,70 @@
+[2026-01-02T11:01:18.789+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-02T11:01:19.047+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: main_pipeline.train_model manual__2026-01-02T11:00:40.762572+00:00 [queued]>
+[2026-01-02T11:01:19.132+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: main_pipeline.train_model manual__2026-01-02T11:00:40.762572+00:00 [queued]>
+[2026-01-02T11:01:19.133+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-01-02T11:01:19.248+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): train_model> on 2026-01-02 11:00:40.762572+00:00
+[2026-01-02T11:01:19.311+0000] {standard_task_runner.py:64} INFO - Started process 685 to run task
+[2026-01-02T11:01:19.318+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'main_pipeline', 'train_model', 'manual__2026-01-02T11:00:40.762572+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/pipeline/main.py', '--cfg-path', '/tmp/tmpyiyf33me']
+[2026-01-02T11:01:19.337+0000] {standard_task_runner.py:91} INFO - Job 12: Subtask train_model
+[2026-01-02T11:01:19.752+0000] {task_command.py:426} INFO - Running <TaskInstance: main_pipeline.train_model manual__2026-01-02T11:00:40.762572+00:00 [running]> on host 11cfdbba07aa
+[2026-01-02T11:01:20.356+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='main_pipeline' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2026-01-02T11:00:40.762572+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-02T11:00:40.762572+00:00'
+[2026-01-02T11:01:20.368+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-02T11:01:26.098+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/pydantic/_internal/_fields.py:161 UserWarning: Field "model_server_url" has conflict with protected namespace "model_".
+
+You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+[2026-01-02T11:01:26.185+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/pydantic/_internal/_config.py:341 UserWarning: Valid config keys have changed in V2:
+* 'schema_extra' has been renamed to 'json_schema_extra'
+[2026-01-02T11:01:36.680+0000] {font_manager.py:1547} INFO - generated new fontManager
+[2026-01-02T11:02:04.981+0000] {logging_mixin.py:188} WARNING - 2026/01/02 11:02:04 INFO mlflow.tracking.fluent: Experiment with name 'price_prediction' does not exist. Creating a new experiment.
+[2026-01-02T11:02:05.906+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-02T11:02:05.912+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/pipeline/main.py", line 80, in train_model
+    data = get_data()
+           ^^^^^^^^^^
+  File "/opt/airflow/dags/pipeline/get_data.py", line 26, in get_data
+    df.to_csv(data_path, index=False)
+  File "/home/airflow/.local/lib/python3.11/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/pandas/core/generic.py", line 3720, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/pandas/io/formats/format.py", line 1189, in to_csv
+    csv_formatter.save()
+  File "/home/airflow/.local/lib/python3.11/site-packages/pandas/io/formats/csvs.py", line 241, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/pandas/io/common.py", line 856, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: './data/1767351725.csv'
+[2026-01-02T11:02:06.140+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=main_pipeline, task_id=train_model, run_id=manual__2026-01-02T11:00:40.762572+00:00, execution_date=20260102T110040, start_date=20260102T110119, end_date=20260102T110206
+[2026-01-02T11:02:06.333+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 12 for task train_model ([Errno 13] Permission denied: './data/1767351725.csv'; 685)
+[2026-01-02T11:02:06.540+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-01-02T11:02:06.631+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-01-02T11:02:06.650+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
