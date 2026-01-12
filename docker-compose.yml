@@ -11,9 +11,7 @@ services:
     networks:
       - mlinfra
     restart: unless-stopped
-  # -------------------------
-  # Airflow Postgres
-  # -------------------------
+
   postgres-airflow:
     image: postgres:15
     container_name: postgres-airflow
@@ -31,9 +29,6 @@ services:
     networks:
       - mlinfra
 
-  # -------------------------
-  # MLflow Postgres
-  # -------------------------
   postgres-mlflow:
     image: postgres:15
     container_name: postgres-mlflow
@@ -50,9 +45,6 @@ services:
     networks:
       - mlinfra
 
-  # -------------------------
-  # MinIO
-  # -------------------------
   minio:
     image: quay.io/minio/minio
     container_name: minio
@@ -85,9 +77,6 @@ services:
     networks:
       - mlinfra
 
-  # -------------------------
-  # MLflow Server
-  # -------------------------
   mlflow:
     build: ./mlflow
     container_name: mlflow
@@ -113,9 +102,6 @@ services:
     networks:
       - mlinfra
 
-  # -------------------------
-  # Airflow Init
-  # -------------------------
   airflow-init:
     build:
       context: .
@@ -148,9 +134,6 @@ services:
     networks:
       - mlinfra
 
-  # -------------------------
-  # Airflow API Server (formerly webserver)
-  # -------------------------
   airflow-webserver:
     build:
       context: .
@@ -179,9 +162,6 @@ services:
     networks:
       - mlinfra
 
-  # -------------------------
-  # Airflow Scheduler
-  # -------------------------
   airflow-scheduler:
     build:
       context: .

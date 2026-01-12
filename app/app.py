@@ -3,119 +3,152 @@ from flask import Flask, request, jsonify
 import pandas as pd
 import logging
 import time
+
 np.random.seed(seed=42)
 
 app = Flask(__name__)
 
-
+# определяет получаемые данные при запросе к flask-роутеру
 TRAFFIC_SPLIT = {
-    "a": 0.5,
-    "b": 0.5,
-    "data_size": 5000,
-    "drift_cols": []
+	"a": 0.5,
+	"b": 0.5,
+	"data_size": 5000,
+	"drift_cols": []
 }
 
-
+# определяет логику логирования запросов
 logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s %(levelname)s [%(name)s] %(message)s",
-    handlers=[
-        logging.FileHandler("./logs/app.log"),
-        logging.StreamHandler()
-    ]
+	level=logging.INFO,
+	format="%(asctime)s %(levelname)s [%(name)s] %(message)s",
+	handlers=[
+		logging.FileHandler("./logs/app.log"),
+		logging.StreamHandler()
+	]
 )
 logger = logging.getLogger("ab-test")
 
 
 @app.before_request
 def log_request():
-    request.start_time = time.time()
+	"""
+	Определяет какие параметры логируются до запроса
+	:return:
+		response: None
+	"""
+	request.start_time = time.time()
 
-    logger.info(
-        "Incoming request | method=%s path=%s remote_addr=%s json=%s",
-        request.method,
-        request.path,
-        request.remote_addr,
-        request.get_json(silent=True)
-    )
+	logger.info(
+		"Incoming request | method=%s path=%s remote_addr=%s json=%s",
+		request.method,
+		request.path,
+		request.remote_addr,
+		request.get_json(silent=True)
+	)
 
 
 @app.after_request
 def log_response(response):
-    duration = time.time() - getattr(request, "start_time", time.time())
+	"""
+		Определяет какие параметры логируются после запроса
+		:return: словарь, содержащий ответ на запрос пользователя
+	"""
+	duration = time.time() - getattr(request, "start_time", time.time())
 
-    if response.is_json:
-        body = response.get_json(silent=True)
-    else:
-        body = "<non-json response>"
+	if response.is_json:
+		body = response.get_json(silent=True)
+	else:
+		body = "<non-json response>"
 
-    logger.info(
-        "Outgoing response | %s %s %s %.3fs body=%s",
-        request.method,
-        request.path,
-        response.status,
-        duration,
-        body
-    )
+	logger.info(
+		"Outgoing response | %s %s %s %.3fs body=%s",
+		request.method,
+		request.path,
+		response.status,
+		duration,
+		body
+	)
 
-    return response
+	return response
 
 
 def simulate_drift(data, cols):
-    cat_col = data[cols].select_dtypes("object")
-    for col in cols:
-        if col in cat_col:
-            data[col] = np.random.choice(data[col].unique(), size=len(data))
-        else:
-            data[col] = [
-                val * coef if np.random.rand() > 0.5 else val
-                for val, coef in zip(data[col].values, np.random.uniform(0.1, 2.0, size=len(data)))
-            ]
-    return data
+	"""
+	Симулирует смещение распределения в полученных данных и указанных столбцах
+	для категориальных случайным образом заменяются значения путем случайного выбора из уникальных значений признака
+	для числовых с вероятностью 50% значений признака будет умножено на случайную величину из равномерного распределения
+	с границами от 0,1 до 2,0
+	:param data: данные, в которые необходимо внести смещение
+	:param cols: признаки, в которые вносится смещение
+	:return: данные после смещения признаков
+	"""
+	cat_col = data[cols].select_dtypes("object")
+	for col in cols:
+		if col in cat_col:
+			data[col] = np.random.choice(data[col].unique(), size=len(data))
+		else:
+			data[col] = [
+				val * coef if np.random.rand() > 0.5 else val
+				for val, coef in zip(data[col].values, np.random.uniform(0.1, 2.0, size=len(data)))
+			]
+	return data
 
 
 @app.route("/get_data", methods=["POST"])
 def get_data():
-    size = TRAFFIC_SPLIT["data_size"]
-    drift_cols = TRAFFIC_SPLIT["drift_cols"]
-    data = pd.read_csv("./DiamondData.csv").sample(size)
-    if drift_cols:
-        data = simulate_drift(data, drift_cols)
+	"""
+	Возвращает данные для обучения модели в соответствии с конфигурацией параметров
+	"""
+	size = TRAFFIC_SPLIT["data_size"]
+	drift_cols = TRAFFIC_SPLIT["drift_cols"]
+	data = pd.read_csv("./DiamondData.csv").sample(size)
+	if drift_cols:
+		data = simulate_drift(data, drift_cols)
 
-    return jsonify(data.to_dict(orient="split"))
+	return jsonify(data.to_dict(orient="split"))
 
 
 @app.route("/ab_data", methods=["POST"])
 def ab_data():
-    size = TRAFFIC_SPLIT["data_size"]
-    drift_cols = TRAFFIC_SPLIT["drift_cols"]
-    data = pd.read_csv("./DiamondData.csv").sample(size)
-    if drift_cols:
-        data = simulate_drift(data, drift_cols)
-    a_data = data.sample(int(size*TRAFFIC_SPLIT["a"]))
-    b_data = data.drop(a_data.index, axis=0
-                       )
-    return jsonify({
-        "a_data": a_data.to_dict(orient="split"),
-        "b_data": b_data.to_dict(orient="split")
-    })
+	"""
+	Возвращает данные для А/В теста в соответствии с конфигурацией параметров
+	"""
+	size = TRAFFIC_SPLIT["data_size"]
+	drift_cols = TRAFFIC_SPLIT["drift_cols"]
+	data = pd.read_csv("./DiamondData.csv").sample(size)
+	if drift_cols:
+		data = simulate_drift(data, drift_cols)
+	a_data = data.sample(int(size * TRAFFIC_SPLIT["a"]))
+	b_data = data.drop(a_data.index, axis=0
+	                   )
+	return jsonify({
+		"a_data": a_data.to_dict(orient="split"),
+		"b_data": b_data.to_dict(orient="split")
+	})
 
 
 @app.route("/traffic", methods=["POST"])
 def update_traffic():
-    global TRAFFIC_SPLIT
-    data = request.json
+	"""
+	Позволяет изменить конфигурацию параметров
+	:return: текущие параметры конфигурации параметров
+	"""
+	global TRAFFIC_SPLIT
+	data = request.json
 
-    if data["a"] + data["b"] != 1.0:
-        return jsonify({"error": "Traffic split must sum to 1.0"}), 400
+	if data["a"] + data["b"] != 1.0:
+		return jsonify({"error": "Traffic split must sum to 1.0"}), 400
 
-    TRAFFIC_SPLIT = data
-    return jsonify({"status": "updated", "traffic": TRAFFIC_SPLIT})
+	TRAFFIC_SPLIT = data
+	return jsonify({"status": "updated", "traffic": TRAFFIC_SPLIT})
 
 
 @app.route("/traffic", methods=["GET"])
 def get_traffic():
-    return jsonify(TRAFFIC_SPLIT)
+	"""
+	Позволяет получить текущие параметры конфигурации
+	:return: текущие параметры конфигурации
+	"""
+	return jsonify(TRAFFIC_SPLIT)
 
 
 # -----------------------------
