@@ -1,127 +1,0 @@
-[2025-12-28T12:18:02.582+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
-[2025-12-28T12:18:02.993+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_distribution_comparison.log_params manual__2025-12-28T12:17:54.632233+00:00 [queued]>
-[2025-12-28T12:18:03.070+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_distribution_comparison.log_params manual__2025-12-28T12:17:54.632233+00:00 [queued]>
-[2025-12-28T12:18:03.100+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
-[2025-12-28T12:18:03.305+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): log_params> on 2025-12-28 12:17:54.632233+00:00
-[2025-12-28T12:18:03.450+0000] {standard_task_runner.py:64} INFO - Started process 2235 to run task
-[2025-12-28T12:18:03.498+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_distribution_comparison', 'log_params', 'manual__2025-12-28T12:17:54.632233+00:00', '--job-id', '26', '--raw', '--subdir', 'DAGS_FOLDER/dag_test/dag_test.py', '--cfg-path', '/tmp/tmpcpbyxee_']
-[2025-12-28T12:18:03.534+0000] {standard_task_runner.py:91} INFO - Job 26: Subtask log_params
-[2025-12-28T12:18:04.265+0000] {task_command.py:426} INFO - Running <TaskInstance: data_distribution_comparison.log_params manual__2025-12-28T12:17:54.632233+00:00 [running]> on host 46629e0044cf
-[2025-12-28T12:18:05.147+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_distribution_comparison' AIRFLOW_CTX_TASK_ID='log_params' AIRFLOW_CTX_EXECUTION_DATE='2025-12-28T12:17:54.632233+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-28T12:17:54.632233+00:00'
-[2025-12-28T12:18:05.165+0000] {taskinstance.py:430} INFO - ::endgroup::
-[2025-12-28T12:18:05.870+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/pydantic/_internal/_fields.py:161 UserWarning: Field "model_name" has conflict with protected namespace "model_".
-
-You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
-[2025-12-28T12:18:45.829+0000] {logging_mixin.py:188} INFO - set env
-[2025-12-28T12:18:45.835+0000] {logging_mixin.py:188} INFO - set uri
-[2025-12-28T12:18:46.228+0000] {logging_mixin.py:188} INFO - set exp
-[2025-12-28T12:19:07.840+0000] {logging_mixin.py:188} INFO -                     Description             Value
-0                    Session id                42
-1                        Target             price
-2                   Target type        Regression
-3           Original data shape         (500, 10)
-4        Transformed data shape         (500, 28)
-5   Transformed train set shape         (350, 28)
-6    Transformed test set shape         (150, 28)
-7              Numeric features                 6
-8          Categorical features                 3
-9                    Preprocess              True
-10              Imputation type            simple
-11           Numeric imputation              mean
-12       Categorical imputation              mode
-13     Maximum one-hot encoding                25
-14              Encoding method              None
-15                    Normalize              True
-16             Normalize method            zscore
-17               Fold Generator             KFold
-18                  Fold Number                 5
-19                     CPU Jobs                -1
-20                      Use GPU             False
-21               Log Experiment             False
-22              Experiment Name  price_prediction
-23                          USI              aa1a
-[2025-12-28T12:19:09.497+0000] {logging_mixin.py:188} WARNING - Processing:   0%|          | 0/77 [00:00<?, ?it/s]
-[2025-12-28T12:19:18.428+0000] {logging_mixin.py:188} WARNING - Processing:   6%|6         | 5/77 [00:08<02:08,  1.79s/it]
-[2025-12-28T12:19:19.491+0000] {logging_mixin.py:188} WARNING - Processing:   9%|9         | 7/77 [00:09<01:33,  1.33s/it]
-[2025-12-28T12:19:23.938+0000] {logging_mixin.py:188} WARNING - Processing:  12%|#1        | 9/77 [00:14<01:51,  1.64s/it]
-[2025-12-28T12:19:24.690+0000] {logging_mixin.py:188} WARNING - Processing:  14%|#4        | 11/77 [00:15<01:20,  1.22s/it]
-[2025-12-28T12:19:29.536+0000] {logging_mixin.py:188} WARNING - Processing:  17%|#6        | 13/77 [00:20<01:42,  1.61s/it]
-[2025-12-28T12:19:30.260+0000] {logging_mixin.py:188} WARNING - Processing:  19%|#9        | 15/77 [00:20<01:15,  1.22s/it]
-[2025-12-28T12:19:34.809+0000] {logging_mixin.py:188} WARNING - Processing:  22%|##2       | 17/77 [00:25<01:32,  1.54s/it]
-[2025-12-28T12:19:35.497+0000] {logging_mixin.py:188} WARNING - Processing:  25%|##4       | 19/77 [00:25<01:08,  1.18s/it]
-[2025-12-28T12:19:39.451+0000] {logging_mixin.py:188} WARNING - Processing:  27%|##7       | 21/77 [00:29<01:19,  1.42s/it]
-[2025-12-28T12:19:40.362+0000] {logging_mixin.py:188} WARNING - Processing:  30%|##9       | 23/77 [00:30<01:00,  1.13s/it]
-[2025-12-28T12:19:46.203+0000] {logging_mixin.py:188} WARNING - Processing:  32%|###2      | 25/77 [00:36<01:26,  1.67s/it]
-[2025-12-28T12:19:46.735+0000] {logging_mixin.py:188} WARNING - Processing:  35%|###5      | 27/77 [00:37<01:02,  1.25s/it]
-[2025-12-28T12:19:50.566+0000] {logging_mixin.py:188} WARNING - Processing:  38%|###7      | 29/77 [00:41<01:09,  1.45s/it]
-[2025-12-28T12:19:51.042+0000] {logging_mixin.py:188} WARNING - Processing:  40%|####      | 31/77 [00:41<00:49,  1.08s/it]
-[2025-12-28T12:19:54.433+0000] {logging_mixin.py:188} WARNING - Processing:  43%|####2     | 33/77 [00:44<00:55,  1.27s/it]
-[2025-12-28T12:19:54.973+0000] {logging_mixin.py:188} WARNING - Processing:  45%|####5     | 35/77 [00:45<00:40,  1.03it/s]
-[2025-12-28T12:20:00.200+0000] {logging_mixin.py:188} WARNING - Processing:  48%|####8     | 37/77 [00:50<00:58,  1.46s/it]
-[2025-12-28T12:20:01.226+0000] {logging_mixin.py:188} WARNING - Processing:  51%|#####     | 39/77 [00:51<00:44,  1.18s/it]
-[2025-12-28T12:20:09.467+0000] {logging_mixin.py:188} WARNING - Processing:  53%|#####3    | 41/77 [00:59<01:14,  2.06s/it]
-[2025-12-28T12:20:10.402+0000] {logging_mixin.py:188} WARNING - Processing:  56%|#####5    | 43/77 [01:00<00:53,  1.58s/it]
-[2025-12-28T12:20:18.803+0000] {logging_mixin.py:188} WARNING - Processing:  58%|#####8    | 45/77 [01:09<01:15,  2.37s/it]
-[2025-12-28T12:20:19.693+0000] {logging_mixin.py:188} WARNING - Processing:  61%|######1   | 47/77 [01:10<00:53,  1.79s/it]
-[2025-12-28T12:20:25.778+0000] {logging_mixin.py:188} WARNING - Processing:  64%|######3   | 49/77 [01:16<01:00,  2.17s/it]
-[2025-12-28T12:20:26.669+0000] {logging_mixin.py:188} WARNING - Processing:  66%|######6   | 51/77 [01:17<00:42,  1.65s/it]
-[2025-12-28T12:20:47.216+0000] {logging_mixin.py:188} WARNING - Processing:  69%|######8   | 53/77 [01:37<01:41,  4.24s/it]
-[2025-12-28T12:20:48.120+0000] {logging_mixin.py:188} WARNING - Processing:  71%|#######1  | 55/77 [01:38<01:08,  3.10s/it]
-[2025-12-28T12:20:56.474+0000] {logging_mixin.py:188} WARNING - Processing:  74%|#######4  | 57/77 [01:46<01:08,  3.42s/it]
-[2025-12-28T12:20:56.909+0000] {logging_mixin.py:188} WARNING - Processing:  77%|#######6  | 59/77 [01:47<00:44,  2.46s/it]
-[2025-12-28T12:21:01.599+0000] {logging_mixin.py:188} WARNING - Processing:  79%|#######9  | 61/77 [01:52<00:38,  2.43s/it]
-[2025-12-28T12:21:02.039+0000] {logging_mixin.py:188} WARNING - Processing:  82%|########1 | 63/77 [01:52<00:24,  1.77s/it]
-[2025-12-28T12:21:06.488+0000] {logging_mixin.py:188} WARNING - Processing:  84%|########4 | 65/77 [01:56<00:22,  1.90s/it]
-[2025-12-28T12:21:06.902+0000] {logging_mixin.py:188} WARNING - Processing:  87%|########7 | 67/77 [01:57<00:13,  1.39s/it]
-[2025-12-28T12:21:19.152+0000] {logging_mixin.py:188} WARNING - Processing:  90%|########9 | 69/77 [02:09<00:22,  2.81s/it]
-[2025-12-28T12:21:19.471+0000] {logging_mixin.py:188} WARNING - Processing:  92%|#########2| 71/77 [02:09<00:12,  2.02s/it]
-[2025-12-28T12:21:22.351+0000] {logging_mixin.py:188} WARNING - Processing:  95%|#########4| 73/77 [02:12<00:07,  1.84s/it]
-[2025-12-28T12:21:22.945+0000] {logging_mixin.py:188} WARNING - Processing:  97%|#########7| 75/77 [02:13<00:02,  1.38s/it]
-[2025-12-28T12:21:23.942+0000] {logging_mixin.py:188} WARNING - Processing: 100%|##########| 77/77 [02:14<00:00,  1.12s/it]
-[2025-12-28T12:21:23.944+0000] {logging_mixin.py:188} WARNING -                                                            
-[2025-12-28T12:21:23.982+0000] {logging_mixin.py:188} INFO -                                     Model        MAE           MSE       RMSE  \
-gbr           Gradient Boosting Regressor   661.1852  1.637641e+06  1226.4582   
-par          Passive Aggressive Regressor   692.7973  1.625991e+06  1221.3993   
-et                  Extra Trees Regressor   705.4390  1.925520e+06  1306.9146   
-huber                     Huber Regressor   735.8075  3.086066e+06  1546.2999   
-rf                Random Forest Regressor   776.3631  2.213075e+06  1424.7053   
-lightgbm  Light Gradient Boosting Machine   819.4217  2.495592e+06  1518.5322   
-ridge                    Ridge Regression   820.6908  1.568376e+06  1235.3229   
-br                         Bayesian Ridge   821.2674  1.596890e+06  1245.2052   
-lasso                    Lasso Regression   823.9696  1.883898e+06  1330.4696   
-llar         Lasso Least Angle Regression   843.7285  2.482633e+06  1465.0344   
-dt                Decision Tree Regressor   982.8000  3.415226e+06  1805.7099   
-lr                      Linear Regression  1014.3099  5.917853e+06  2022.0838   
-ada                    AdaBoost Regressor  1021.9737  2.431301e+06  1519.3722   
-omp           Orthogonal Matching Pursuit  1026.6427  2.571895e+06  1568.5865   
-en                            Elastic Net  1139.1132  2.771924e+06  1622.7622   
-knn                 K Neighbors Regressor  1483.0040  5.859698e+06  2365.2397   
-lar                Least Angle Regression  1619.9849  3.697958e+07  4157.3622   
-dummy                     Dummy Regressor  3146.2206  1.721063e+07  4106.9051   
-
-              R2   RMSLE    MAPE  TT (Sec)  
-gbr       0.9074  0.2274  0.1726     0.888  
-par       0.9091  0.4742  0.2420     1.040  
-et        0.8929  0.2257  0.1789     1.666  
-huber     0.8232  0.4359  0.2561     1.644  
-rf        0.8736  0.2385  0.1918     4.104  
-lightgbm  0.8547  0.2932  0.2199     2.446  
-ridge     0.9058  0.6129  0.4108     0.962  
-br        0.9042  0.6421  0.4096     0.676  
-lasso     0.8875  0.5508  0.3993     0.882  
-llar      0.8526  0.5478  0.4041     1.162  
-dt        0.7948  0.3042  0.2442     1.210  
-lr        0.6507  0.6060  0.5102     1.762  
-ada       0.8579  0.4282  0.4437     0.936  
-omp       0.8496  0.9666  0.4013     0.762  
-en        0.8405  0.7309  0.4480     0.908  
-knn       0.6605  0.5629  0.5507     1.674  
-lar      -1.1763  0.6617  0.7533     0.786  
-dummy    -0.0350  1.1251  1.8518     0.570  
-[2025-12-28T12:21:23.984+0000] {python.py:237} INFO - Done. Returned value was: None
-[2025-12-28T12:21:23.986+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
-[2025-12-28T12:21:24.046+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=data_distribution_comparison, task_id=log_params, run_id=manual__2025-12-28T12:17:54.632233+00:00, execution_date=20251228T121754, start_date=20251228T121802, end_date=20251228T122124
-[2025-12-28T12:21:24.082+0000] {logging_mixin.py:188} WARNING - 
-[2025-12-28T12:21:24.191+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
-[2025-12-28T12:21:24.251+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
-[2025-12-28T12:21:24.257+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
